@@ -27,24 +27,6 @@ resource "aci_bridge_domain" "demo_bd" {
   relation_fv_rs_bd_to_out  = [var.bd.relation_fv_rs_bd_to_out]
 }
 
-# ### Add DHCP Relay Policy
-# resource "aci_dhcp_relay_policy" "dhcp-relay-policy" {
-#   tenant_dn = aci_tenant.demo_tenant.id
-#   name      = "TF-IKS-Demo-DHCP_RelayPolicy"
-#   mode      = "visible"
-#   owner     = "tenant"
-#   relation_dhcp_rs_prov {
-#     addr = "10.1.100.251"
-#     tdn  = "uni/tn-TN_VMs/ap-AP_VMs/epg-EPG_VMs"
-#   }
-# }
-
-# ### Add DCHP Relay Label
-# resource "aci_bd_dhcp_label" "dhcp-relay-label" {
-#   bridge_domain_dn = aci_bridge_domain.demo_bd.id
-#   name             = "TF-IKS-Demo-DHCP_RelayPolicy"
-#   owner            = "tenant"
-# }
 
 ### Add a new Subnet to Bridge Domain
 resource "aci_subnet" "bd_subnet" {
