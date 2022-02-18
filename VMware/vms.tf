@@ -13,7 +13,7 @@ data "vsphere_compute_cluster" "cluster" {
 }
 
 data "vsphere_network" "network_web" {
-  name          = var.vm_settings.portgroup # module.ACI.vsphere_portgroup_name
+  name          = var.vm_settings.portgroup
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
