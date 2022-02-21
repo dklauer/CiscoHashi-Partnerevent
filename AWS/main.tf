@@ -35,6 +35,7 @@ resource "aws_route_table" "rtb" {
 resource "aws_subnet" "instance_subnet" {
   vpc_id = aws_vpc.hashicorp_vpc.id
   cidr_block = "172.16.0.0/24"
+  map_public_ip_on_launch = "true"
 }
 #Associate Subnet
 resource "aws_route_table_association" "route_association" {
