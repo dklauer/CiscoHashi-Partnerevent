@@ -23,7 +23,7 @@ data "terraform_remote_state" "vmware_portgroup_name" {
 }
 
 data "vsphere_network" "network_web" {
-  name          = data.terraform_remote_state.vmware_portgroup_name.outputs.vsphere_portgroup_name #var.vm_settings.portgroup
+  name          = data.terraform_remote_state.vmware_portgroup_name.outputs.vsphere_portgroup_name
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 

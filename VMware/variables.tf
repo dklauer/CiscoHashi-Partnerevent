@@ -1,17 +1,3 @@
-# Variables for the vCenter provider
-# variable "vsphere_user" {
-#   type    = string
-#   default = "administrator@vsphere.local"
-# }
-
-# variable "vsphere_password" {
-#   type    = string
-# }
-
-# variable "vsphere_server" {
-#   type    = string
-# }
-
 variable "vsphere_provider" {
   type = object({
     user     = string
