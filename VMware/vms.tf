@@ -12,8 +12,18 @@ data "vsphere_compute_cluster" "cluster" {
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
+data "terraform_remote_state" "vmware_portgroup_name" {
+    backend = "remote"
+    config ={
+        organization = "cisco-eshelter-innovation-lab"
+        workspaces = {
+            name = "CiscoHashi-Partnerevent-ACI"
+        }
+    }
+}
+
 data "vsphere_network" "network_web" {
-  name          = var.vm_settings.portgroup
+  name          = data.terraform_remote_state.vmware_portgroup_name.outputs.vsphere_portgroup_name #var.vm_settings.portgroup
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
