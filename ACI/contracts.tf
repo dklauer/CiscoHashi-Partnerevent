@@ -18,7 +18,6 @@ resource "aci_epg_to_contract" "demo_contract_internet_con" {
   contract_dn        = "uni/tn-common/brc-CTR_All-Out"
   contract_type      = "consumer"
 }
-
 ### Add contract to connect to L3our for internet access consumer side
 resource "aci_epg_to_contract" "demo_contract_internet_pro" {
   application_epg_dn = aci_application_epg.demo_epg.id

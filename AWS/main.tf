@@ -42,7 +42,6 @@ resource "aws_route_table_association" "route_association" {
   subnet_id      = aws_subnet.instance_subnet.id
   route_table_id = aws_route_table.rtb.id
 }
-
 resource "aws_instance" "app_server" {
   ami           = "${lookup(var.amis, var.region)}"
   instance_type = "t2.micro"
