@@ -28,5 +28,7 @@ variable "vm_settings" {
     dns_server_list = list(string)
     portgroup       = string
     diskname        = string
+    tfc_org         = string
+    tfc_workspace   = string
   })
 }

@@ -13,13 +13,13 @@ data "vsphere_compute_cluster" "cluster" {
 }
 
 data "terraform_remote_state" "vmware_portgroup_name" {
-    backend = "remote"
-    config ={
-        organization = "cisco-eshelter-innovation-lab"
-        workspaces = {
-            name = "CiscoHashi-Partnerevent-ACI"
-        }
+  backend = "remote"
+  config = {
+    organization = var.vm_settings.tfc_org
+    workspaces = {
+      name = var.vm_settings.tfc_workspace
     }
+  }
 }
 
 data "vsphere_network" "network_web" {
